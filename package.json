@@ -1,8 +1,8 @@
 {
   "name": "sote-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Some tool functions.",
-  "main": "./index.js",
+  "main": "./dist/tools.js",
   "scripts": {
     "dev": "tsc -w"
   },
