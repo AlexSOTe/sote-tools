@@ -1,12 +1,12 @@
 {
   "name": "sote-tools",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Some tool functions.",
+  "main": "src/tools.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc -w"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ "tools" ],
+  "author": "AlexSOTe",
   "license": "ISC"
 }
