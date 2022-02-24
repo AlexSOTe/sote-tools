@@ -1,1 +1,5 @@
-export * as SOTeTools from './src/tools';
+import * as SOTeTools from './src/tools';
+
+export {
+  SOTeTools
+}

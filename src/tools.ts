@@ -46,3 +46,11 @@ export function GetCurrentDate(timeStamp: number) {
  * 获取项目入口url上面的参数
  */
 export const entryUrlQuery = (() => QueryToJson(location.href))();
+
+/**
+ * 创建用于template遍历的key
+ * 禁止在template中使用，会重新渲染template造成已改变template数据的丢失
+ */
+export function CreateViewKey() {
+  return `ViewKey_${new Date().getTime()}`;
+}

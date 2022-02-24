@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.entryUrlQuery = exports.GetCurrentDate = exports.QueryToJson = exports.JsonToQuery = void 0;
+exports.CreateViewKey = exports.entryUrlQuery = exports.GetCurrentDate = exports.QueryToJson = exports.JsonToQuery = void 0;
 /**
  * json对象 转换成 ?a=1&b=2&c=3 的样子
  * @param {any} json json对象
@@ -50,3 +50,11 @@ exports.GetCurrentDate = GetCurrentDate;
  * 获取项目入口url上面的参数
  */
 exports.entryUrlQuery = (function () { return QueryToJson(location.href); })();
+/**
+ * 创建用于template遍历的key
+ * 禁止在template中使用，会重新渲染template造成已改变template数据的丢失
+ */
+function CreateViewKey() {
+    return "ViewKey_".concat(new Date().getTime());
+}
+exports.CreateViewKey = CreateViewKey;

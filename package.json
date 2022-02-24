@@ -1,6 +1,6 @@
 {
   "name": "sote-tools",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Some tool functions.",
   "main": "src/tools.ts",
   "scripts": {
