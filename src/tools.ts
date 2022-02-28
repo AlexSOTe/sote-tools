@@ -56,6 +56,7 @@ export function CreateViewKey() {
 /**
  * 复制传入的文字（暂不考虑）兼容性
  * @param text {string} 要拷贝的文本
+ * @returns Promise<void>
  */
 export function CopyText(text: string): Promise<void> {
   return navigator?.clipboard?.writeText(text);
