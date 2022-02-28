@@ -9,7 +9,7 @@ export declare function JsonToQuery(json: any): string;
  * @param seperator1 用来替换与号（&）的分隔符，默认是与号（&）
  * @param seperator2 用来替换等号（=）的分隔符，默认是等号（=）
  */
-export declare function QueryToJson(url: any, seperator1?: string, seperator2?: string): any;
+export declare function QueryToJson(url: string, seperator1?: string, seperator2?: string): any;
 /**
  * 获取当前时间的年月日：2021-01-01
  * @param {any} timeStamp 目标时间戳
@@ -24,3 +24,8 @@ export declare const entryUrlQuery: any;
  * 禁止在template中使用，会重新渲染template造成已改变template数据的丢失
  */
 export declare function CreateViewKey(): string;
+/**
+ * 复制传入的文字（暂不考虑）兼容性
+ * @param text
+ */
+export declare function CopyText(text: string): Promise<void>;

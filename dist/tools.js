@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateViewKey = exports.entryUrlQuery = exports.GetCurrentDate = exports.QueryToJson = exports.JsonToQuery = void 0;
+exports.CopyText = exports.CreateViewKey = exports.entryUrlQuery = exports.GetCurrentDate = exports.QueryToJson = exports.JsonToQuery = void 0;
 /**
  * json对象 转换成 ?a=1&b=2&c=3 的样子
  * @param {any} json json对象
@@ -58,3 +58,12 @@ function CreateViewKey() {
     return "ViewKey_".concat(new Date().getTime());
 }
 exports.CreateViewKey = CreateViewKey;
+/**
+ * 复制传入的文字（暂不考虑）兼容性
+ * @param text
+ */
+function CopyText(text) {
+    var _a;
+    return (_a = navigator === null || navigator === void 0 ? void 0 : navigator.clipboard) === null || _a === void 0 ? void 0 : _a.writeText(text);
+}
+exports.CopyText = CopyText;
