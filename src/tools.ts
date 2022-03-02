@@ -1,9 +1,13 @@
+interface AnyJsonObject {
+  [key: string]: any;
+}
 /**
  * json对象 转换成 ?a=1&b=2&c=3 的样子
- * @param {any} json json对象
+ * @param {AnyJsonObject} json json对象
+ * @param {boolean} isSpliceQuestionMark 是否需要拼接问号【?】
  */
-export function JsonToQuery(json: any) {
-  let query = '?'
+export function JsonToQuery(json: AnyJsonObject, isSpliceQuestionMark = true) {
+  let query = isSpliceQuestionMark ? '?' : '';
   for (const key in json) {
     query += `${key}=${json[key]}&`
   }
@@ -17,7 +21,7 @@ export function JsonToQuery(json: any) {
  * @param seperator2 用来替换等号（=）的分隔符，默认是等号（=）
  */
 export function QueryToJson(url: string, seperator1 = '&', seperator2 = '=') {
-  const obj: any = {};
+  const obj: AnyJsonObject = {};
   const q = url.split('?')[1] || '';
   q.split(seperator1).forEach((v: string) => {
     const valArr: Array<string> = v.split(seperator2);

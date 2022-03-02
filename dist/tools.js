@@ -3,10 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CopyText = exports.CreateViewKey = exports.entryUrlQuery = exports.GetCurrentDate = exports.QueryToJson = exports.JsonToQuery = void 0;
 /**
  * json对象 转换成 ?a=1&b=2&c=3 的样子
- * @param {any} json json对象
+ * @param {AnyJsonObject} json json对象
+ * @param {boolean} isSpliceQuestionMark 是否需要拼接问号【?】
  */
-function JsonToQuery(json) {
-    var query = '?';
+function JsonToQuery(json, isSpliceQuestionMark) {
+    if (isSpliceQuestionMark === void 0) { isSpliceQuestionMark = true; }
+    var query = isSpliceQuestionMark ? '?' : '';
     for (var key in json) {
         query += "".concat(key, "=").concat(json[key], "&");
     }
@@ -60,7 +62,8 @@ function CreateViewKey() {
 exports.CreateViewKey = CreateViewKey;
 /**
  * 复制传入的文字（暂不考虑）兼容性
- * @param text
+ * @param text {string} 要拷贝的文本
+ * @returns Promise<void>
  */
 function CopyText(text) {
     var _a;
