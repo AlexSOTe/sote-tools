@@ -26,7 +26,7 @@ function QueryToJson(url, seperator1, seperator2) {
     if (seperator2 === void 0) { seperator2 = '='; }
     var obj = {};
     var q = url.split('?')[1] || '';
-    q.split(seperator1).forEach(function (v) {
+    q.split(seperator1).filter(function (v) { return !!v; }).forEach(function (v) {
         var valArr = v.split(seperator2);
         var key = valArr[0];
         var val = valArr[1];
@@ -50,6 +50,7 @@ function GetCurrentDate(timeStamp) {
 exports.GetCurrentDate = GetCurrentDate;
 /**
  * 获取项目入口url上面的参数
+ * @deprecated Will 废弃 in the future.
  */
 exports.entryUrlQuery = (function () { return QueryToJson(location.href); })();
 /**

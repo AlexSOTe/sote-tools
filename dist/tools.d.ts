@@ -21,6 +21,7 @@ export declare function QueryToJson(url: string, seperator1?: string, seperator2
 export declare function GetCurrentDate(timeStamp: number): string;
 /**
  * 获取项目入口url上面的参数
+ * @deprecated Will 废弃 in the future.
  */
 export declare const entryUrlQuery: AnyJsonObject;
 /**

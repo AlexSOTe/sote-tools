@@ -23,7 +23,7 @@ export function JsonToQuery(json: AnyJsonObject, isSpliceQuestionMark = true) {
 export function QueryToJson(url: string, seperator1 = '&', seperator2 = '=') {
   const obj: AnyJsonObject = {};
   const q = url.split('?')[1] || '';
-  q.split(seperator1).forEach((v: string) => {
+  q.split(seperator1).filter(v => !!v).forEach((v: string) => {
     const valArr: Array<string> = v.split(seperator2);
     const key = valArr[0];
     const val = valArr[1];
@@ -47,6 +47,7 @@ export function GetCurrentDate(timeStamp: number) {
 
 /**
  * 获取项目入口url上面的参数
+ * @deprecated Will 废弃 in the future.
  */
 export const entryUrlQuery = (() => QueryToJson(location.href))();
 
